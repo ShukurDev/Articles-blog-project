@@ -1,0 +1,43 @@
+{% extends 'base.html' %} 
+
+{% block title %} Bosh sahifa {% endblock title %} 
+
+{% block content %} 
+
+{% if user.is_authenticated %} 
+<h3>
+    Xurmatli {{ user.username|title }}
+</h3>
+<h4>
+    Sizni saytimizga tashrif buyurganingiz bilan tabriklaymiz.
+</h4><br><br>
+<h2>
+    Qiziqarli postlarimizni kurishingiz mumkin 
+</h2>
+<h4>
+    Postlar sahifasiga o'tish uchun...
+    <a href="{% url 'article_list' %}">quyida</a>
+</h4>
+<h5><a href="{% url 'logout' %}"> Chiqib ketish</a></h5>
+{% else %}
+<div class="container" style="background-color: rgb(100, 237, 141); padding: 10%; margin-top: 20px;">
+    <h1 style="font-size: 50px;">
+        <b>Assalomu alaykum aziz birodar</b><br><br>
+    </h1>
+        <h4>
+               <b>Shukurali Rezamonovning shahsiy blog vepsaytiga Xush kelibsiz</b><br><br>
+
+
+               Bu yerda Dasturlashga doir maqolalarni o'qishingiz mumkin
+        </h4><br><br>
+        
+    <h4>
+        <p style="text-decoration: crimson; display: inline-block;"><a href="{% url 'login' %}" role="button" class="btn btn-warning">Saytimizga kirish uchun  </a></p>
+        <p style="display: inline-block;"><a href="{% url 'signup' %}" role="button" class="btn btn-info">Ro'yhatdan o'tish uchun</a></p><br><br>
+        <h3><a href="{% url 'article_list' %}" class="btn btn-success" role="button">Maqolalar sahifasiga o'tiah</a></h3>
+    </h4>
+    
+</div>
+{% endif %} 
+
+{% endblock content %} 

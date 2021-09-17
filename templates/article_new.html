@@ -1,0 +1,15 @@
+{% extends 'base.html' %} 
+
+{% load crispy_forms_tags %} 
+{% block content %} 
+
+<h2>
+    Post yaratish sahifasi
+</h2>
+<form method="post" enctype="multipart/form-data">{% csrf_token %}
+    {{ form.media }}
+    {{ form|crispy}}
+    <input type="submit" value="yuborish">
+</form>
+
+{% endblock content %}
