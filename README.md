@@ -1,0 +1,1 @@
+# Hali tayyor bulmagan loyiha
